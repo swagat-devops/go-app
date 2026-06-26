@@ -81,12 +81,12 @@ jobs:
 
     - name: Update tag in Helm chart
       run: |
-        sed -i 's/tag: .*/tag: "${{github.run_id}}"/' go-app/templates/values.yaml
+        sed -i 's/tag: .*/tag: "${{github.run_id}}"/' go-app/values.yaml
 
     - name: Commit and push changes
       run: |
         git config --global user.email "swagatdevops@gmail.com"
         git config --global user.name "swagat-devops"
-        git add go-app/templates/values.yaml
+        git add go-app/values.yaml
         git commit -m "Update tag in Helm chart"
         git push
