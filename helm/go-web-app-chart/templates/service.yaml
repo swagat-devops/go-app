@@ -1,0 +1,20 @@
+# Service for the application
+apiVersion: v1
+kind: Service
+metadata:
+  name: go-web-app
+  namespace: go-app
+  labels:
+    app: go-web-app
+  annotations:
+    service.beta.kubernetes.io/aws-load-balancer-type: "nlb"
+spec:
+  ports:
+  - port: 80
+    targetPort: 8080
+    protocol: TCP
+  selector:
+    app: go-web-app
+  type: NodePort
+
+  
