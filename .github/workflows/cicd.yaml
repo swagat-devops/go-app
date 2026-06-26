@@ -6,7 +6,7 @@ on:
     branches:
       - main
     paths-ignore:
-      - 'helm/**'
+      - 'go-app/**'
       - 'k8s/**'
       - 'README.md'
 
